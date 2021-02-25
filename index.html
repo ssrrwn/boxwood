@@ -1,0 +1,39 @@
+//One image should incorporate another image. Specifically, you need to use a PImage.
+//Soft-serve ice cream cone
+//I tried to make an animation to pour the perfect soft-serve ice cream cone.
+//You can press or release the mouse button to pour the ice cream. 
+//When pressing 'c' flavor changes to chocolate and when pressing 'v' flavor changes back to vanila.
+
+PImage icecream;
+PImage bg;
+
+void setup() {
+  size(1200,800);
+  //bg=loadImage("bg.png");
+  icecream=loadImage("boxwood2.png");
+  //background(bg);
+} 
+ 
+void draw() {
+  
+  if (mousePressed == true) {
+    imageMode(CENTER);
+    image(icecream,mouseX,mouseY);
+}
+if(keyPressed==true){
+   if(key=='d'){
+    tint(150,150,150);
+   }
+}
+if(keyPressed==true){    
+    if(key=='b'){
+    tint(255);
+    }
+}
+}
+
+void keyPressed(){
+  if (key=='e'){
+  background(192);
+}
+}
