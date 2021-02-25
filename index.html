@@ -1,39 +1,46 @@
-//One image should incorporate another image. Specifically, you need to use a PImage.
-//Soft-serve ice cream cone
-//I tried to make an animation to pour the perfect soft-serve ice cream cone.
-//You can press or release the mouse button to pour the ice cream. 
-//When pressing 'c' flavor changes to chocolate and when pressing 'v' flavor changes back to vanila.
 
-PImage icecream;
-PImage bg;
+var icecream;
+var bg;
 
-void setup() {
-  size(1200,800);
-  //bg=loadImage("bg.png");
-  icecream=loadImage("boxwood2.png");
-  //background(bg);
-} 
- 
-void draw() {
-  
-  if (mousePressed == true) {
-    imageMode(CENTER);
-    image(icecream,mouseX,mouseY);
+function setup() {
+    // background(bg);
+    initializeFields();
+    createCanvas(1200, 800);
+    // bg=loadImage("bg.png");
+    icecream = loadImage("https://i.ibb.co/wrG4xdW/boxwood2.png");
 }
-if(keyPressed==true){
-   if(key=='d'){
-    tint(150,150,150);
-   }
-}
-if(keyPressed==true){    
-    if(key=='b'){
-    tint(255);
+
+function draw() {
+    if (mouseIsPressed == true) {
+        imageMode(CENTER);
+        image(icecream, mouseX, mouseY);
+    }
+    if (keyIsPressed == true) {
+        if (key == 'd') {
+            tint(150, 150, 150);
+        }
+    }
+    if (keyIsPressed == true) {
+        if (key == 'b') {
+            tint(255);
+        }
     }
 }
+
+function keyPressed() {
+    if (key == 'e') {
+        background(255);
+    }
 }
 
-void keyPressed(){
-  if (key=='e'){
-  background(192);
+function initializeFields() {
+    icecream = null;
+    bg = null;
 }
+
+function preload() {
+// TODO: put method calls that load from files into this method
+// I found the following calls that you should move here:
+// - on line 13: icecream = loadImage("boxwood2.png")
+// (note that line numbers are from your Processing code)
 }
